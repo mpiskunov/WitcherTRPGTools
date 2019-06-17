@@ -10,6 +10,84 @@
     <script src="combat.js"></script>
 </head>
   <body>
-  Hello Mom!
+    <div class="container">
+
+       <!-- ================================================================================= -->
+       <!-- =============================== START DIV ======================================= -->
+       <!-- ================================================================================= -->
+      <div class="jumbotron " id="divStart">
+        <div class="col text-center">
+            <h1 class="display-4 col-text-center">Start Combat</h1>
+        </div>
+        <hr class="my-4">
+        <div class="col text-center">
+          <a class="btn btn-primary btn-lg" href="#" role="button" id="btnStart">Fight!</a>
+        </div>
+      </div>
+      <!-- START END -->
+
+      <!-- ================================================================================= -->
+      <!-- =============================== ATTACKER AIMING ================================= -->
+      <!-- ================================================================================= -->
+      <div class="jumbotron d-none" id="divAttackAim">
+        <div class="col text-center">
+            <h1 class="display-4 col-text-center">Is the attacker aiming for a part?</h1>
+        </div>
+        <hr class="my-4">
+        <div class="col text-center">
+            <div class="btn-group btn-group-toggle" id="rbgAiming" data-toggle="buttons">
+              <label class="btn btn-secondary">
+                <input type="radio" name="aiming" id="rbAiming" autocomplete="off" value="1"> Yes
+              </label>
+              <label class="btn btn-secondary">
+                <input type="radio" name="aiming" id="rbNotAiming" autocomplete="off" value="0"> No
+              </label>
+            </div>
+        </div>
+      </div> 
+      <!-- ATTACKER AIMING END -->
+
+      <!-- ================================================================================= -->
+      <!-- =============================== ATTACK ROLL ===================================== -->
+      <!-- ================================================================================= -->
+      <div class="jumbotron" id="divAttackRoll"> 
+        <div class="col text-center">
+            <h1 class="display-4 col-text-center">Attacker's Roll</h1>
+        </div>
+        <hr class="my-4">
+        <div class="row">
+            <form action="" class="form-inlin justify-content-center">
+                <div class="form-group">
+                    <label class="sr-only">Name</label>
+                    <input type="text" class="form-control" placeholder="Jane Doe">
+                </div>
+                <button type="submit" class="btn btn-success ">okay, go!</button>
+            </form>
+        </div>
+      </div> 
+      <!-- END OF ATTACK ROLL -->
+
+      <!-- ================================================================================= -->
+      <!-- =============================== DEFENSIVE ROLL ================================== -->
+      <!-- ================================================================================= -->
+      <div class="jumbotron" id="divDefenseRoll"> 
+        <div class="col text-center">
+            <h1 class="display-4 col-text-center">Start Combat</h1>
+        </div>
+        <hr class="my-4">
+        <div class="col text-center">
+          <a class="btn btn-primary btn-lg" href="#" role="button">Go</a>
+        </div>
+      </div>
+      <!-- END OF DEFENSIVE ROLL -->
+
+    </div>
+        <div class="col-3 text-center align-self-center mx-auto">
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </div>
   </body>
 </html>
+<!-- d-none to hide -->
