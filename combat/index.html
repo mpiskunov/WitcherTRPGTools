@@ -1,27 +1,45 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>title</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
     <script src="combat.js"></script>
-</head>
+  </head>
   <body>
-    <div class="container">
-
-       <!-- ================================================================================= -->
-       <!-- =============================== START DIV ======================================= -->
-       <!-- ================================================================================= -->
-      <div class="jumbotron " id="divStart">
+    <div class="container col-sm-5">
+      <!-- ================================================================================= -->
+      <!-- =============================== START DIV ======================================= -->
+      <!-- ================================================================================= -->
+      <div class="jumbotron d-none" id="divStart">
         <div class="col text-center">
-            <h1 class="display-4 col-text-center">Start Combat</h1>
+          <h1 class="display-4 col-text-center">Start Combat</h1>
         </div>
-        <hr class="my-4">
+        <hr class="my-4" />
         <div class="col text-center">
-          <a class="btn btn-primary btn-lg" href="#" role="button" id="btnStart">Fight!</a>
+          <a class="btn btn-primary btn-lg" href="#" role="button" id="btnStart"
+            >Fight!</a
+          >
         </div>
       </div>
       <!-- START END -->
@@ -31,63 +49,156 @@
       <!-- ================================================================================= -->
       <div class="jumbotron d-none" id="divAttackAim">
         <div class="col text-center">
-            <h1 class="display-4 col-text-center">Is the attacker aiming for a part?</h1>
+          <h1 class="display-4 col-text-center">Attacker Aiming?</h1>
         </div>
-        <hr class="my-4">
-        <div class="col text-center">
-            <div class="btn-group btn-group-toggle" id="rbgAiming" data-toggle="buttons">
-              <label class="btn btn-secondary">
-                <input type="radio" name="aiming" id="rbAiming" autocomplete="off" value="1"> Yes
+        <hr class="my-4" />
+        <div class="row justify-content-center form-group">
+          <div class="col-md-auto">
+            <div
+              class="btn-group btn-group-toggle"
+              id="rbgAiming"
+              data-toggle="buttons"
+            >
+              <label class="btn btn-danger">
+                <input
+                  type="radio"
+                  name="aiming"
+                  id="rbAiming"
+                  autocomplete="off"
+                  value="1"
+                />
+                Yes
               </label>
-              <label class="btn btn-secondary">
-                <input type="radio" name="aiming" id="rbNotAiming" autocomplete="off" value="0"> No
+              <label class="btn btn-success">
+                <input
+                  type="radio"
+                  name="aiming"
+                  id="rbNotAiming"
+                  autocomplete="off"
+                  value="0"
+                />
+                No
               </label>
             </div>
+          </div>
         </div>
-      </div> 
+        <div
+          class="row justify-content-center form-group d-none"
+          id="divBodyParts"
+        >
+          <div class="col-md-auto">
+            <select class="custom-select" id="optBodyParts">
+              <option selected>Body Part</option>
+              <option value="-6">Head</option>
+              <option value="-1">Torso</option>
+              <option value="-3">Arm</option>
+              <option value="-3">Leg</option>
+            </select>
+          </div>
+        </div>
+      </div>
       <!-- ATTACKER AIMING END -->
 
       <!-- ================================================================================= -->
       <!-- =============================== ATTACK ROLL ===================================== -->
       <!-- ================================================================================= -->
-      <div class="jumbotron" id="divAttackRoll"> 
+      <div class="jumbotron d-none" id="divAttackAim">
         <div class="col text-center">
-            <h1 class="display-4 col-text-center">Attacker's Roll</h1>
+          <h1 class="display-4 col-text-center">Attacker's Roll</h1>
         </div>
-        <hr class="my-4">
-        <div class="row">
-            <form action="" class="form-inlin justify-content-center">
-                <div class="form-group">
-                    <label class="sr-only">Name</label>
-                    <input type="text" class="form-control" placeholder="Jane Doe">
+        <hr class="my-4" />
+        <div class="row text-white">
+          <div class="col-sm-6 offset-sm-3 text-center">
+            <div class="info-form">
+              <form action="" class="justify-content-center">
+                <div class="form-group form-inline">
+                  <label class="sr-only">Roll</label>
+                  <input
+                    type="number"
+                    id="inputAttBase"
+                    class="form-control col-2 offset-sm-4"
+                  />
+                  <input
+                    type="number"
+                    id="inputAttMod"
+                    class="form-control col-2 offset-sm-1"
+                  />
                 </div>
-                <button type="submit" class="btn btn-success ">okay, go!</button>
-            </form>
+                <div class="form-inline">
+                  <div class="col-1 offset-sm-4 text-dark"><p>(Base)</p></div>
+                  <p class="col-3 offset-sm-1  text-dark">(Modifiers)</p>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-      </div> 
+      </div>
       <!-- END OF ATTACK ROLL -->
 
       <!-- ================================================================================= -->
       <!-- =============================== DEFENSIVE ROLL ================================== -->
       <!-- ================================================================================= -->
-      <div class="jumbotron" id="divDefenseRoll"> 
+      <div class="jumbotron d-none" id="divDefenseRoll">
         <div class="col text-center">
-            <h1 class="display-4 col-text-center">Start Combat</h1>
+          <h1 class="display-4 col-text-center">Defender's Roll</h1>
         </div>
-        <hr class="my-4">
-        <div class="col text-center">
-          <a class="btn btn-primary btn-lg" href="#" role="button">Go</a>
+        <hr class="my-4" />
+        <div class="row text-white">
+          <div class="col-sm-6 offset-sm-3 text-center">
+            <div class="info-form">
+              <form action="" class="justify-content-center">
+                <div class="form-group form-inline">
+                  <label class="sr-only">Roll</label>
+                  <input
+                    type="number"
+                    id="inputDefBase"
+                    class="form-control col-2 offset-sm-4"
+                  />
+                  <input
+                    type="number"
+                    id="inputDefMod"
+                    class="form-control col-2 offset-sm-1"
+                  />
+                </div>
+                <div class="form-inline">
+                  <div class="col-1 offset-sm-4 text-dark"><p>(Base)</p></div>
+                  <p class="col-3 offset-sm-1  text-dark">(Modifiers)</p>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
       <!-- END OF DEFENSIVE ROLL -->
 
-    </div>
-        <div class="col-3 text-center align-self-center mx-auto">
-            <ul class="pagination">
-              <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-              <li class="page-item"><a class="page-link" href="#">Next</a></li>
-            </ul>
+      <!-- ================================================================================= -->
+      <!-- =============================== RESULT PANEL ==================================== -->
+      <!-- ================================================================================= -->
+      <div class="jumbotron d-none" id="divResult">
+        <div class="col text-center">
+          <h1 class="display-4 col-text-center">Result</h1>
         </div>
+        <hr class="my-4" />
+        <div class="row justify-content-center">
+          <div class="col-md-auto">
+            <h3 id="txtResult"></h3>
+          </div>
+        </div>
+      </div>
+      <!-- END OF RESULT PANEL -->
+      <div class="row justify-content-center d-none" id="divBottomButtons">
+        <div class="col-md-auto">
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link d-none" id="btnPrev" href="#">Previous</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link d-none" id="btnNext" href="#">Next</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
 <!-- d-none to hide -->
